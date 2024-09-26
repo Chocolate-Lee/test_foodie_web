@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "C95QEP389L.com.sosocode.security",
+                "paths": [ "/app/*" ]
+            }
+        ]
+    }
+}

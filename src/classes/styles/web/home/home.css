@@ -1,0 +1,24 @@
+.scrollable-container::-webkit-scrollbar {
+    display: none; /* 对于Webkit浏览器 */
+}
+   
+.scrollable-container {
+    -ms-overflow-style: none; /* 对于IE和Edge */
+    scrollbar-width: none; /* 对于Firefox */
+}
+
+
+#no-scrollbar {
+    overflow: auto; /* 允许滚动 */
+    -ms-overflow-style: none; /* IE 和 Edge */
+    scrollbar-width: none; /* Firefox */
+    transition: scrollLeft 1s ease-in-out;
+}
+
+/* #scrollable {
+    transition: scrollLeft 0.3s ease-in-out;
+} */
+   
+#no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari 和 Opera */
+}

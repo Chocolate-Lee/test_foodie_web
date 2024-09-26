@@ -1,0 +1,149 @@
+.map .left-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.map .left-bar {
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-none;
+}
+
+.map .list-item {
+  padding: 12px 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #e8e8e8;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  position: relative;
+}
+
+.map .list-item:hover {
+  background-color: #e8e8e8;
+}
+
+.map .list-item.active {
+  background-color: #e8e8e8;
+}
+
+.map .list-item .checked-icon {
+  font-size: 18px;
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  /* transform: translateY(-9px); */
+}
+
+.map .list-item .left-box {
+  display: flex;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.map .list-item .num {
+  font-size: 20px;
+  font-family: tahoma, "microsoft yahei", "\5FAE\8F6F\96C5\9ED1"!important;
+  width: 30px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.map .list-item.small .num {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.map .list-item .right-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.map .list-item .title {
+  margin-bottom: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.map .list-item.small .title {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 0px;
+}
+
+.map .list-item .description {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.map .ant-pagination {
+  display: flex;
+  justify-content: center;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+.map .marker {
+  position: absolute;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  top: 0;
+  left: 0;
+  user-select: none;
+  width: 54px;
+  height: 385px;
+  min-width: 54px;
+  max-width: 54px;
+  min-height: 385px;
+  max-height: 385px;
+}
+
+.map .marker.num-1 {
+  top: 0px;
+}
+
+.map .marker.num-2 {
+  top: -35px;
+}
+
+.map .marker.num-3 {
+  left: -70px;
+}
+
+.map .marker.num-4 {
+  left: -105px;
+}
+
+.map .marker.num-5 {
+  left: -140px;
+}
+
+.map .marker.num-6 {
+  left: -175px;
+}
+
+.map .marker.num-7 {
+  left: -210px;
+}
+
+.map .marker.num-8 {
+  left: -245px;
+}
+
+.map .marker.num-9 {
+  left: -280px;
+}
+
+.map .marker.num-10 {
+  left: -315px;
+}
+
+.map .marker.active {
+  left: -27px;
+}
