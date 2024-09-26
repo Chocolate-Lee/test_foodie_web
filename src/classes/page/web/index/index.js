@@ -1,41 +1,43 @@
 import React, { Component } from 'react';
+import { PageRoutes } from '../../../constants/routeConstants';
 
 import HOME from '../home/home';
 
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
-export default class AppController extends Component {
+
+export default class AppController_PC extends Component {
     constructor(props) {
         super(props);
+
+        
+        let pageUri = undefined;
+        if (window.location.pathname) {
+            let tmp = window.location.pathname.split('/');
+            if (tmp.length > 1) {
+                this.weburi = tmp[1];
+            }
+            if (tmp.length > 2) {
+                pageUri = tmp[2];
+            }
+            
+        }
 
         this.state = {
             windowWidth: window.innerWidth,
             windowHeight: window.innerHeight,
-
-            showWXDownlaodTip: false
+            pageUri,
         };
-
-       
     }
 
     componentDidMount() {
+
         window.addEventListener('resize', () => {
             this.setState({
                 windowWidth: window.innerWidth,
                 windowHeight: window.innerHeight
             });
         });
-
-        let u = navigator.userAgent, app = navigator.appVersion;
-        this.isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
-        this.isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
-        var ua = navigator.userAgent.toLowerCase();  
-        
-        if(ua.match(/MicroMessenger/i)=="micromessenger") {  
-            this.isWX = true;  
-        } else {  
-            this.isWX = false;
-        }  
     }
 
     render() {
@@ -44,7 +46,9 @@ export default class AppController extends Component {
         return (
             <div style={{ display: 'flex', width: windowWidth, minHeight: windowHeight, flexDirection: 'column', backgroundColor: '#fff', position: 'relative', alignItems: 'center' }}>
                 <div style={{ display: 'flex', width: '100%', minHeight: '100%', flexDirection: 'row', backgroundColor: '#fff', position: 'relative', alignItems: 'center', marginBottom: 60 }}>
-                    <HOME weburi={this.weburi} />
+                    <HOME />
+
+                
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', 
@@ -54,8 +58,12 @@ export default class AppController extends Component {
                     paddingBottom: 10,
                     paddingTop: 10,
                     bottom: 0 }}>
+                    
+                    <span style={{ fontSize: '12px', marginTop: 5, cursor: 'default' }}><span style={{ marginLeft: 30 }}></span></span>
+                    <span style={{ fontSize: '12px', marginTop: 5, cursor: 'default' }}></span>
                 </div>
             </div>
         );
     }
 }
+

@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import { isDevicePC } from './classes/utils/helper/device-helper';
 
-const AppController_PC = React.lazy(() => import('./classes/page/web/index/index-pc'));
+
 const AppController = React.lazy(() => import('./classes/page/web/index/index'));
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
 
           <Switch>
             
-            <Route path='/' component={isDevicePC() ? AppController_PC : AppController} />
+            <Route path='/' component={AppController} />
           </Switch>
 
         </Suspense>
